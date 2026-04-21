@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎉 Pra você!</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(45deg, #2ec3d7, #093a74, #75d530, #5d63e2);
+      background-size: 400% 400%;
+      animation: gradient 8s ease infinite;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .card {
+      background: white;
+      padding: 25px 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      max-width: 320px;
+      position: relative;
+      z-index: 2;
+    }
+    h1 { color: #0f8381; margin: 10px 0; font-size: 26px; }
+    .gif-danca {
+      width: 220px;
+      height: 165px;
+      border-radius: 15px;
+      margin: 0 auto 10px auto;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    button {
+      background: #076f5a;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      margin-top: 15px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover { background: #0f8381; }
+    @keyframes cair {
+      to { transform: translateY(100vh) rotate(720deg); }
+    }
+    .confetes {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="gif-danca" src="https://media.giphy.com/media/yoJC2GnSClbPOkV0eA/giphy.gif" alt="Minions festa">
+    
+    <h1>Feliz aniversário, meu amor! 😘</h1>
+    <p>Hoje o dia é todo seu! ✨</p>
+    <p>Te desejo mais um ano com muita saúde, paz, dinheiro no bolso, juízo, e eu do seu lado pra tudo!</p>
+    <p>Que venham muitos e muitos anos.</p>
+    <p><strong>Você merece tudo de bom! 💙</strong></p>
+    
+    <button onclick="alert('🎉 Parabéeens! 🎉\n\nQue seu dia seja tão especial quanto você! E lembre-se: eu tenho muito orgulho de você! 😘💙💙💙\n\nCom carinho, Fernanda 😘')">
+      Clica aqui 👆
+    </button>
+  </div>
+
+  <div class="confetes"></div>
+
+  <script>
+    const confetesContainer = document.querySelector('.confetes');
+    const cores = ['#FF3B30', '#FF9500', '#FFCC00', '#34C759', '#00C7BE', '#007AFF', '#5856D6', '#AF52DE', '#FF2D55'];
+    
+    function criarConfete() {
+      const confete = document.createElement('div');
+      confete.style.position = 'fixed';
+      confete.style.width = Math.random() * 8 + 4 + 'px';
+      confete.style.height = Math.random() * 8 + 4 + 'px';
+      confete.style.background = cores[Math.floor(Math.random() * cores.length)];
+      confete.style.left = Math.random() * 100 + '%';
+      confete.style.top = '-10px';
+      confete.style.opacity = Math.random() * 0.7 + 0.3;
+      confete.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+      confete.style.transform = `rotate(${Math.random() * 360}deg)`;
+      
+      const duracao = Math.random() * 3 + 4;
+      confete.style.animation = `cair ${duracao}s linear forwards`;
+      
+      confetesContainer.appendChild(confete);
+      setTimeout(() => { confete.remove(); }, duracao * 1000);
+    }
+    setInterval(criarConfete, 200);
+  </script>
+</body>
+</html>
