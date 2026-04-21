@@ -17,3 +17,5 @@ Cartão digital em arquivo único HTML que fiz pro aniversário do meu amor.
 ### 💡 Por que fiz em um arquivo só
 Quis fazer algo que qualquer pessoa consiga abrir, editar e rodar sem instalar nada. Um arquivo só, zero complicação.
 
+## ✨ Veja o cartão
+[![Abrir Cartão](https://img.shields.io/badge/Abrir-Cartão-FF69B4?style=for-the-badge&logo=github)](https://fernandacarva.github.io/cartao-de-aniversario)
